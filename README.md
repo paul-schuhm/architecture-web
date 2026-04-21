@@ -7,6 +7,10 @@
   - [Vim, first steps](#vim-first-steps)
 
 
+## TP Apache first steps
+
+- [Apache HTTP Server : guide pratique (vhosts, TLS, performances)](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de Stéphane Robert. Service un site statique avec Apache.
+
 ## Exercices
 
 ### Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)
