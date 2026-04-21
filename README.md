@@ -34,7 +34,7 @@
 8. Peut-on *surcharger* (*override*) une configuration d'un site web avec Apache ? Si oui, comment ?
 9. A quoi sert le programme `apache2ctl` ?
 10. A quoi servent les directives `<Directory>`, `<Files>` et `<FilesMatch>`. Où se placent-elles ?
-11. Apache enregistre des logs (activité et erreur). Où les trouvent-on ? Inspecter les avec cat. Monitorer les logs en temps réel avec `tail -f /path/vers/fichier_log`.
+11. Apache enregistre des *logs* (activité du site et erreurs du serveur). Où les trouvent-on ? Inspecter les avec `cat`. Monitorer les logs en temps réel avec `tail -f /path/vers/fichier_log`.
 
 > N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives. 
 
