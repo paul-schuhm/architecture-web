@@ -35,6 +35,8 @@
 9. A quoi sert le programme `apache2ctl` ?
 10. A quoi servent les directives `<Directory>`, `<Files>` et `<FilesMatch>`. Où se placent-elles ?
 
+> N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives. 
+
 ## Exercices
 
 ### Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)
