@@ -1,15 +1,39 @@
 # architecture-web
 
 - [architecture-web](#architecture-web)
+  - [TP 1 : Apache first steps](#tp-1--apache-first-steps)
+    - [Extension du TP](#extension-du-tp)
   - [Exercices](#exercices)
     - [Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
   - [Installation et configuration sécurisée du serveur SSH](#installation-et-configuration-sécurisée-du-serveur-ssh)
   - [Vim, first steps](#vim-first-steps)
 
 
-## TP Apache first steps
+## TP 1 : Apache first steps
 
-- [Apache HTTP Server : guide pratique (vhosts, TLS, performances)](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de Stéphane Robert. Service un site statique avec Apache.
+[Apache HTTP Server : guide pratique (vhosts, TLS, performances)](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de Stéphane Robert. Service un site statique avec Apache. Réaliser le TP jusqu'à [Activer HTTPS avec Let’s Encrypt](https://blog.stephane-robert.info/docs/services/web/apache/#activer-https-avec-lets-encrypt) (exclus).
+
+### Extension du TP
+
+1. Comment Apache sait quel site afficher quand j’ai plusieurs domaines et plusieurs sites web ?
+2. Comment tester le fonctionnement de ma configuration multisite avec le client cURL ?
+3. Que fait la commande `sudo chown -R www-data:www-data /var/www/monsite` ? Qui est l'utilisateur `www-data` ?
+4. A quoi sert la directive suivante :
+
+~~~
+    <Directory /var/www/monsite>
+        Options -Indexes +FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+~~~
+
+5. Que fait la commande `sudo apache2ctl configtest` ?
+6. Que signifie la directive `<VirtualHost *:80>` ?
+7. A quoi sert la directive `ServerName` ?
+8. Peut-on *surcharger* (*override*) une configuration d'un site web avec Apache ? Si oui, comment ?
+9. A quoi sert le programme `apache2ctl` ?
+10. A quoi servent les directives `<Directory>`, `<Files>` et `<FilesMatch>`. Où se placent-elles ?
 
 ## Exercices
 
