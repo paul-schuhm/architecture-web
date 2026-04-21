@@ -4,6 +4,7 @@
   - [Exercices](#exercices)
     - [Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
   - [Installation et configuration sécurisée du serveur SSH](#installation-et-configuration-sécurisée-du-serveur-ssh)
+  - [Vim, first steps](#vim-first-steps)
 
 
 ## Exercices
@@ -23,3 +24,20 @@
 ## Installation et configuration sécurisée du serveur SSH
 
 [Voir le guide](https://ftp.pschuhmacher.com/unix/guide-serveur-ssh.html)
+
+## Vim, first steps
+
+~~~bash
+apt install git
+git init
+git config --global user.name "votre name"
+git config --global user.emaim "votre emails"
+git config --list
+git config --global core.editor "votre éditeur préféré"
+git config --global --edit
+#renommer branche 'master' en 'main'
+git branch --move master main
+#lister les branches
+git branch
+~~~
+
