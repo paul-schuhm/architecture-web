@@ -3,6 +3,7 @@
 - [architecture-web](#architecture-web)
   - [Objectifs](#objectifs)
   - [Programme](#programme)
+  - [Fonctionnement d'Internet](#fonctionnement-dinternet)
   - [Serveur web Apache](#serveur-web-apache)
     - [TP 1 : Apache 2, first steps](#tp-1--apache-2-first-steps)
       - [Extension du TP](#extension-du-tp)
@@ -13,7 +14,6 @@
       - [Exercice 2 : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice-2--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
   - [Git, first steps](#git-first-steps)
   - [Références](#références)
-
 
 ## Objectifs
 
@@ -29,7 +29,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 - Administration de base sur GNU/Linux :
   - Utiliser les commandes de base du *shell* (rappels)
   - Créer des alias et utiliser `.bashrc`
-  - Utiliser un éditeur de texte (nano, vi(m) ou emacs) 
+  - Utiliser un éditeur de texte (nano, vi(m) ou emacs)
   - Créer un utilisateur
   - Comprendre et gérer correctement les droits sur les fichiers
   - Gérer les paquets avec `apt` (mise à jour, installation/suppression)
@@ -52,6 +52,10 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
   - La réécriture d'URL avec le module `mod_rewrite`
   - Installation et usage d'un certificat TLS
 
+## Fonctionnement d'Internet
+
+- Parcours d'une requête HTTP sur Internet
+- [Consulter le glossaire (protocoles, matériel, modèle OSI et couches, etc.)](./glossaire.md) associé
 
 ## Serveur web Apache
 
@@ -82,7 +86,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 10. A quoi servent les directives `<Directory>`, `<Files>` et `<FilesMatch>`. Où se placent-elles ?
 11. Apache enregistre des *logs* (activité du site et erreurs du serveur). Où les trouvent-on ? Inspecter les avec `cat`. Monitorer les logs en temps réel avec `tail -f /path/vers/fichier_log`.
 
-> N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives. 
+> N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives.
 
 ## Unix
 
