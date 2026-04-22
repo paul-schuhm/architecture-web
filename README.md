@@ -14,6 +14,7 @@
       - [Exercice 2 : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice-2--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
   - [Git, first steps](#git-first-steps)
   - [Références](#références)
+  - [Ressources connexes](#ressources-connexes)
 
 ## Objectifs
 
@@ -148,3 +149,12 @@ git log
 ~~~
 
 ## Références
+
+> Ouvrages recommandés !
+
+- [Les réseaux de zéro : comprendre les réseaux par la pratique](https://www.editions-eyrolles.com/livre/les-reseaux-de-zero), publié chez Eyrolles, par Vincent Sénétaire, Jean-Manassé Pouabou, 2022. **Excellent ouvrage**, LP++
+- [TCP/IP Network Administration](https://www.oreilly.com/library/view/tcp-ip-network-administration/0596002971/), publié chez O'Reilly, par Craig Hunt, 2002. LP+
+
+## Ressources connexes
+
+- [Glossaire](./glossaire.md) : définition des protocoles, modèle OSI, matériel, etc.
