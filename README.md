@@ -4,12 +4,13 @@
   - [Objectifs](#objectifs)
   - [Programme](#programme)
   - [Serveur web Apache](#serveur-web-apache)
-    - [TP 1 : Apache first steps](#tp-1--apache-first-steps)
+    - [TP 1 : Apache 2, first steps](#tp-1--apache-2-first-steps)
       - [Extension du TP](#extension-du-tp)
   - [Unix](#unix)
-    - [Exercice : Apprivoiser un éditeur de texte](#exercice--apprivoiser-un-éditeur-de-texte)
-    - [Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
     - [Installation et configuration sécurisée d'un serveur SSH](#installation-et-configuration-sécurisée-dun-serveur-ssh)
+    - [Exercices](#exercices)
+      - [Exercice 1 : Apprivoiser un éditeur de texte](#exercice-1--apprivoiser-un-éditeur-de-texte)
+      - [Exercice 2 : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice-2--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
   - [Git, first steps](#git-first-steps)
   - [Références](#références)
 
@@ -54,7 +55,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 
 ## Serveur web Apache
 
-### TP 1 : Apache first steps
+### TP 1 : Apache 2, first steps
 
 [Apache HTTP Server : guide pratique (vhosts, TLS, performances) : *Servir un site statique avec Apache*](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de [Stéphane Robert](https://blog.stephane-robert.info/). **Réaliser le TP** jusqu'à [Activer HTTPS avec Let’s Encrypt](https://blog.stephane-robert.info/docs/services/web/apache/#activer-https-avec-lets-encrypt) (exclus).
 
@@ -85,7 +86,13 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 
 ## Unix
 
-### Exercice : Apprivoiser un éditeur de texte
+### Installation et configuration sécurisée d'un serveur SSH
+
+[Consulter et suivre le guide](https://ftp.pschuhmacher.com/unix/guide-serveur-ssh.html)
+
+### Exercices
+
+#### Exercice 1 : Apprivoiser un éditeur de texte
 
 Pour travailler sur des serveurs GNU/Linux, il est **indispensable de maîtriser les bases d'un éditeur de texte dans le shell**.
 
@@ -97,9 +104,7 @@ Pour travailler sur des serveurs GNU/Linux, il est **indispensable de maîtriser
 
 > L'avantage de `nano` et de `vi`(m), c'est qu'**ils sont installés par défaut** sur toutes les distributions GNU/Linux. Ainsi, si vous de disposez pas des privilèges pour installer un autre éditeur de texte, vous êtes en mesure de travailler sereinement.
 
-
-
-### Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)
+#### Exercice 2 : se créer ses commandes avec des alias (man, ls, cut, grep, tr)
 
 0. **Inspecter** la sortie de `man -f ls cut grep tr` pour savoir ce que fait chaque commande;
 1. **Créer** un alias `lls` qui affiche la liste longue triée par taille décroissante (en utilisant `ls -l`);
@@ -109,10 +114,6 @@ Pour travailler sur des serveurs GNU/Linux, il est **indispensable de maîtriser
 5. **Enregistrer** ces alias dans votre fichier `~/.bash_aliases`.
 
 > Conseil : dès que vous rencontrez un nouveau programme/commande, utiliser le manuel `man <nouveau programme>`. Apprenez à utiliser `man` (navigation, recherche par *pattern* pour retrouver rapidement une option)
-
-### Installation et configuration sécurisée d'un serveur SSH
-
-[Consulter et suivre le guide](https://ftp.pschuhmacher.com/unix/guide-serveur-ssh.html)
 
 ## Git, first steps
 

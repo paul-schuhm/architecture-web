@@ -1,6 +1,7 @@
 # Architecture d'Internet (et du web) - Glossaire
 
 - [Architecture d'Internet (et du web) - Glossaire](#architecture-dinternet-et-du-web---glossaire)
+  - [Modèle OSI](#modèle-osi)
   - [Domain Name Service (DNS)](#domain-name-service-dns)
   - [Autonomous System (AS)](#autonomous-system-as)
   - [Trame (Ethernet)](#trame-ethernet)
@@ -18,9 +19,35 @@
   - [SFTP (SSH File Transfer Protocol )](#sftp-ssh-file-transfer-protocol-)
   - [SMTP (Simple Mail Transfer Protocol)](#smtp-simple-mail-transfer-protocol)
 
+## Modèle OSI
+
+Le [modèle *Open Systems Interconnection* (OSI)](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI) est une façon *standardisée* de segmenter en plusieurs *couches* le processus de communication entre deux entités. 
+
+Une *couche* est un *ensemble de services* accomplissant un but précis. Chaque couche du modèle OSI communique avec les couches au-dessus et au-dessous d'elle. La couche en-dessous fournit des services que la couche en cours utilise et cette dernière pourvoit des services dont la couche au-dessus d'elle aura besoin pour assurer son rôle.
+
+![](./osi-diagram.svg)
+
+Chaque couche *expose une interface à la couche supérieure* et dispose de son implémentation.
+
+Ainsi, l'*implémentation* de chaque couche peut changer, évoluer, être remplacée sans impacter les autres. Par exemple, cela explique pourquoi nous avons pu passer de l'Internet filaire au Wi-Fi sans avoir à réécrire le protocole HTTP : seule l'implémentation des couches basses a changé, tandis que les couches supérieures sont restées identiques. C'est un cas classique d'application du [*polymorphisme*](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)) et de la [Separation of Concerns (SoC)*](https://en.wikipedia.org/wiki/Separation_of_concerns).
+
+Grâce à ces principes, chaque couche n'a besoin de connaître que l'*interface* de la couche inférieure, sans se soucier de ses détails d'implémentation (*abstraction*) et de fournir une interface à la couche supérieure. En masquant la complexité des couches inférieures, le modèle OSI permet au développeur·se web de se concentrer sur la logique métier et la formation correcte de ses messages HTTP, avec la certitude que les octets arriveront à destination, sans avoir à se soucier de *comment* ces octets sont transmis sur le réseau.
+
+Le modèle OSI segmente le processus de communications en *sept* couches :
+
+- Application
+- Présentation
+- Session
+- Transport
+- Réseau
+- Liaison (de données)
+- Physique
+
+> Un moyen mnémotechnique pour s'en souvenir "**P**artout **L**e **R**oi **T**rouve **S**a **P**lace **A**ssise"
+
 ## Domain Name Service (DNS)
 
-Un service informatique *distribué* qui associe les *noms de domaine* Internet avec *leurs [adresses IP](#ip-internet-protocol)* ou d'autres types d'enregistrements. Fonction : map nom de domaine (hôte, autority) avec IP publique.
+Un service informatique *distribué* dont la fonction principale est de maintenir et de fournir les associations entre les *noms de domaine* Internet avec *leurs [adresses IP](#ip-internet-protocol)*.
 
 ## Autonomous System (AS)
 
