@@ -55,7 +55,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 
 ### TP 1 : Apache first steps
 
-[Apache HTTP Server : guide pratique (vhosts, TLS, performances)](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de Stéphane Robert. Service un site statique avec Apache. Réaliser le TP jusqu'à [Activer HTTPS avec Let’s Encrypt](https://blog.stephane-robert.info/docs/services/web/apache/#activer-https-avec-lets-encrypt) (exclus).
+[Apache HTTP Server : guide pratique (vhosts, TLS, performances) : *Servir un site statique avec Apache*](https://blog.stephane-robert.info/docs/services/web/apache/#servir-un-site-statique), de [Stéphane Robert](https://blog.stephane-robert.info/). **Réaliser le TP** jusqu'à [Activer HTTPS avec Let’s Encrypt](https://blog.stephane-robert.info/docs/services/web/apache/#activer-https-avec-lets-encrypt) (exclus).
 
 #### Extension du TP
 
