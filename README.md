@@ -7,6 +7,7 @@
     - [TP 1 : Apache first steps](#tp-1--apache-first-steps)
       - [Extension du TP](#extension-du-tp)
   - [Unix](#unix)
+    - [Exercice : Apprivoiser un éditeur de texte](#exercice--apprivoiser-un-éditeur-de-texte)
     - [Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
     - [Installation et configuration sécurisée d'un serveur SSH](#installation-et-configuration-sécurisée-dun-serveur-ssh)
   - [Git, first steps](#git-first-steps)
@@ -83,6 +84,20 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 > N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives. 
 
 ## Unix
+
+### Exercice : Apprivoiser un éditeur de texte
+
+Pour travailler sur des serveurs GNU/Linux, il est **indispensable de maîtriser les bases d'un éditeur de texte dans le shell**.
+
+**Choisissez** un éditeur de texte parmi `nano`, `vim` ou `emacs` et **réalisez un/son tutoriel** pour apprendre les bases : **créer**, **parcourir** et **éditer** un fichier, faire une **recherche** par *pattern*.
+
+- nano : `man nano`, liste des commandes `Ctr+ G` ;
+- vim : `vimtutor`
+- emacs : emacs, puis `Ctr + h t`
+
+> L'avantage de `nano` et de `vi`(m), c'est qu'**ils sont installés par défaut** sur toutes les distributions GNU/Linux. Ainsi, si vous de disposez pas des privilèges pour installer un autre éditeur de texte, vous êtes en mesure de travailler sereinement.
+
+
 
 ### Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)
 
