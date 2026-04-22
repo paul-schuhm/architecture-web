@@ -30,7 +30,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
   - Créer des alias et utiliser `.bashrc`
   - Utiliser un éditeur de texte (nano, vi(m) ou emacs) 
   - Créer un utilisateur
-  - Gérer des droits sur les fichiers
+  - Comprendre et gérer correctement les droits sur les fichiers
   - Gérer les paquets avec `apt` (mise à jour, installation/suppression)
   - Installer et configurer un serveur SSH
   - Sécuriser une connexion SSH (usage de clés de chiffrement)
