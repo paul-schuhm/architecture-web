@@ -7,6 +7,8 @@
   - [Protocol Data Unit (PDU)](#protocol-data-unit-pdu)
   - [Domain Name Service (DNS)](#domain-name-service-dns)
   - [Autonomous System (AS)](#autonomous-system-as)
+  - [Protocole (communication)](#protocole-communication)
+  - [Segment](#segment)
   - [Paquet (IP)](#paquet-ip)
   - [Trame (Ethernet)](#trame-ethernet)
   - [Frame Check Sequence (FCS)](#frame-check-sequence-fcs)
@@ -17,6 +19,17 @@
   - [TCP (Transmission Control Protocol)](#tcp-transmission-control-protocol)
   - [UDP (User Datagram Protocol)](#udp-user-datagram-protocol)
   - [Border Gateway Protocol (BGP)](#border-gateway-protocol-bgp)
+  - [Multiplexage](#multiplexage)
+  - [Communication duplex (bidirectionnelle)](#communication-duplex-bidirectionnelle)
+  - [Communication simplex (monodirectionnel)](#communication-simplex-monodirectionnel)
+  - [Full-duplex (FDX)](#full-duplex-fdx)
+  - [Half-duplex (HDX)](#half-duplex-hdx)
+  - [Routage](#routage)
+  - [Routage Unicast](#routage-unicast)
+  - [Routage Multicast](#routage-multicast)
+  - [Routage Broadcast](#routage-broadcast)
+  - [Routage interne (protocole)](#routage-interne-protocole)
+  - [Routage externe (protocole)](#routage-externe-protocole)
   - [HTTP (HyperText Transfert Protocol)](#http-hypertext-transfert-protocol)
   - [FTP (File Transfert Protocol)](#ftp-file-transfert-protocol)
   - [FTPS (File Transfer Protocol Secure)](#ftps-file-transfer-protocol-secure)
@@ -109,6 +122,27 @@ Un service informatique *distribué* dont la fonction principale est de mainteni
 
 Un ensemble de réseaux informatiques IP intégrés à Internet et dont la politique de routage interne (routes à choisir en priorité, filtrage des annonces) est cohérente. Un AS est généralement sous le contrôle d'une entité ou organisation unique, typiquement un fournisseur d'accès à Internet. [Environ 120 000 en 2026](https://www-public.telecom-sudparis.eu/~maigron/rir-stats/rir-delegations/world/world-asn-by-number.html).
 
+
+## Protocole (communication)
+
+Un protocole de communication est un *ensemble de règles* dictant *comment* doit s'effectuer la communication entre *deux entités*. Un protocole de communication assure généralement :
+
+- La gestion du format de données (header + message)
+- La gestion du format des adresses (définir émetteur et récepteur)
+- La correspondance d'adresses (par ex IP et MAC)
+- Le routage (diriger les données entre deux réseaux d'un plan d'adressage différent)
+- La détection d'erreurs de transmission
+- L'accusé de reception
+- La gestion de pertes d'informations
+- La direction du flux d'information
+- Le contrôle de séquences : toute information envoyée sur un réseau est segmentée en plusieurs séquences. Elles peuvent donc arriver dans le désordre. Le contrôle de séquences permet de réordonner les parties pour reconstituer l'information initiale.
+
+> Un seul protocole n'assure pas à lui tout seul toutes ces fonctions, mais une *pile* de protocoles, chacun d'entre eux ayant un rôle précis
+
+## Segment
+
+Un segment ([TCP](#tcp-transmission-control-protocol) ou [UDP](#udp-user-datagram-protocol)) est le [PDU](#protocol-data-unit-pdu) de la couche Transport (couche 4). Il encapsule le PDU provenant de la couche Application.
+
 ## Paquet (IP)
 
 Un paquet (*packet*) est le [PDU](#protocol-data-unit-pdu) de la couche Réseau (couche 3). Il encapsule le segment (TPDU) provenant de la couche Transport.
@@ -154,22 +188,75 @@ Le [protocole IP](#ip-internet-protocol) ne gérant que le transport des paquets
 
 ## TCP (Transmission Control Protocol)
 
-TCP est un protocole de transport fiable, en mode connecté, basé sur un *stream* (flux) d'octets découpé en *segments*.
+TCP est un protocole de transport fiable, orienté connexion, [*full-duplex*](#full-duplex), basé sur un *stream* (flux) d'octets découpé en *segments*.
+
+Le but de TCP est d'assurer la transmission des [SDU](#service-data-unit-sdu). Par le mécanisme de handshake, il établit une connexion au préalable entre les processus avant de débuter la transmission.
 
 > Couche Transport (Couche 4 du modèle OSI)
 
 ## UDP (User Datagram Protocol)
 
-UDP permet la transmission de données (sous forme de [datagrammes](https://fr.wikipedia.org/wiki/Datagramme)) de manière très simple entre deux entités, chacune étant définie par une adresse IP et un numéro de port. Aucune communication préalable n'est requise pour établir la connexion, au contraire de TCP (qui utilise le procédé de *handshaking*). UDP utilise un mode de transmission *sans connexion*. 
+UDP est un protocole qui permet la transmission de données (sous forme de [datagrammes](https://fr.wikipedia.org/wiki/Datagramme)) de manière très simple entre deux entités, chacune étant définie par une adresse IP et un numéro de port. 
+
+Aucune communication préalable n'est requise pour établir la connexion, au contraire de TCP (qui utilise le procédé de *handshaking*)
 
 > Couche Transport (Couche 4 du modèle OSI)
 
 ## Border Gateway Protocol (BGP)
 
-Protocole d'échange de route externe. Permet aux routeurs de s'échanger les "meilleurs" path (adresses IP) pour passer d'[un AS](#autonomous-system-as) à l'autre : chemin le plus stable et conforme à des accords commerciaux, souveraineté des états, etc. (pas le chemin le plus cours). Ce protocole dote les routeurs d'une table de routage. 
+Protocole de routage externe, de la famille des *Exterior Gateway Protocol (EGP)*. Permet de router des paquets entre [deux systèmes autonomes](#autonomous-system-as). Le BGP fournit le chemin (informations de routage) le plus stable et conforme à des accords commerciaux, souveraineté des états, etc.
+
+BGP est un protocole "Point à Point" (Unicast). Contrairement à des protocoles comme ARP qui "crient" sur le réseau local pour trouver une adresse MAC, BGP  établit des connexions directes et spécifiques (via TCP sur le port 179) avec des voisins bien précis, appelés peers.
 
 > Couche Application (Couche 7 du modèle OSI)
 
+## Multiplexage
+
+Technique pour faire passer plusieurs informations à travers un seul support de transmission (canal de communication)
+
+## Communication duplex (bidirectionnelle)
+
+Le canal de transmission entre A et B peut transporter des données dans les deux sens, de A vers B et de B vers A. Il faut distinguer les systèmes [full-duplex](#full-duplex) et [half-duplex](#half-duplex).
+
+## Communication simplex (monodirectionnel)
+
+Le canal de transmission entre A et B peut transporter des données dans un seul sens, soit de A vers B, soit de B vers A. Par exemple, une diffusion radio ou télévisée est une transmission simplex, l'information circule uniquement de l'émetteur vers le récepteur.
+
+## Full-duplex (FDX)
+
+Système de communication où les deux parties A et B peuvent s'échanger **simultanément** des données. Par exemple, TCP est un protocole full-duplex. Une conversion téléphonique est full-duplex.
+
+Le full-duplex est souvent réalisé par l'association de deux canaux simplex.
+
+## Half-duplex (HDX)
+
+Système de communication où les deux parties A et B ne peuvent **pas** s'échanger *simultanément* des données. Une communication par talkies-walkies est *half-duplex*.
+
+## Routage
+
+Le routage consiste à faire passer des données à travers des routeurs, dans le but de les conduire d'un point A à un point B. Le routage est l'action de router des paquets d'**un réseau à l'autre**. 
+
+Le protocole IP a pour charge de vérifier si une communication est *intra-réseau* (au sein d'un même réseau) ou *inter-réseau* (entre deux réseaux).
+
+## Routage Unicast
+
+Le routage unicast consiste à transmettre les paquets à un seul destinataire.
+
+## Routage Multicast
+
+Le routage multicast consiste à transmettre les paquets à un groupe de destinataire en n'utilisant qu'une seule adresse IP multicast.
+
+## Routage Broadcast
+
+Le routage broadcast consiste à transmettre les paquets à *tous les hôtes* d'un sous-réseau.
+
+## Routage interne (protocole)
+
+Les protocoles de routage interne (Interior Gateway Protocol ou IGP) peuvent échanger des informations de routage *au sein* d'un système autonome, un ensemble de réseaux IP contrôlés par une organisation ou une entreprise (FAI)
+
+## Routage externe (protocole)
+
+Les protocoles de routage externe (Extern Gateway Protocol ou EGP) peuvent échanger des informations de routage *entre* systèmes autonomes. C'est la famille du principal protocole de routage utilisé par Internet, [BGP](#border-gateway-protocol-bgp).
 
 ## HTTP (HyperText Transfert Protocol)
 
