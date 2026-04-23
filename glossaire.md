@@ -29,6 +29,8 @@
   - [Routage Multicast](#routage-multicast)
   - [Routage Broadcast](#routage-broadcast)
   - [Routage interne (protocole)](#routage-interne-protocole)
+  - [Routing Information Protocol (RIP)](#routing-information-protocol-rip)
+  - [Open Shortest Path First (OSPF)](#open-shortest-path-first-ospf)
   - [Routage externe (protocole)](#routage-externe-protocole)
   - [HTTP (HyperText Transfert Protocol)](#http-hypertext-transfert-protocol)
   - [FTP (File Transfert Protocol)](#ftp-file-transfert-protocol)
@@ -252,7 +254,19 @@ Le routage broadcast consiste à transmettre les paquets à *tous les hôtes* d'
 
 ## Routage interne (protocole)
 
-Les protocoles de routage interne (Interior Gateway Protocol ou IGP) peuvent échanger des informations de routage *au sein* d'un système autonome, un ensemble de réseaux IP contrôlés par une organisation ou une entreprise (FAI)
+Les protocoles de routage interne ([Interior Gateway Protocol ou IGP](https://en.wikipedia.org/wiki/Interior_gateway_protocol)) peuvent échanger des informations de routage *au sein* d'un système autonome, un ensemble de réseaux IP contrôlés par une organisation ou une entreprise (FAI)
+
+<!-- 
+Explorer et présenter [Routing Information Protocol (RIP)](https://en.wikipedia.org/wiki/Routing_Information_Protocol) (distance vector routing protocols) et [Open Shortest Path FIrst](https://en.wikipedia.org/wiki/Open_Shortest_Path_First) (link-state routing protocols) 
+ -->
+
+## Routing Information Protocol (RIP)
+
+Protocole de routage interne utilisé par la couche réseau.
+
+## Open Shortest Path First (OSPF)
+
+Protocole de routage interne utilisé par la couche réseau.
 
 ## Routage externe (protocole)
 
