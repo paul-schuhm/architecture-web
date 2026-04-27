@@ -1,23 +1,13 @@
 # architecture-web
 
 - [architecture-web](#architecture-web)
-<<<<<<< HEAD
-  - [TP 1 : Apache first steps](#tp-1--apache-first-steps)
-    - [Extension du TP](#extension-du-tp)
-    - [Réécriture d'URL](#réécriture-durl)
-  - [Exercices](#exercices)
-    - [Exercice : se créer ses commandes avec des alias (man, ls, cut, grep, tr)](#exercice--se-créer-ses-commandes-avec-des-alias-man-ls-cut-grep-tr)
-  - [Installation et configuration sécurisée du serveur SSH](#installation-et-configuration-sécurisée-du-serveur-ssh)
-  - [Vim, first steps](#vim-first-steps)
-
-## TP 1 : Apache first steps
-=======
   - [Objectifs](#objectifs)
   - [Programme](#programme)
   - [Fonctionnement d'Internet](#fonctionnement-dinternet)
   - [Serveur web Apache](#serveur-web-apache)
     - [TP 1 : Apache 2, first steps](#tp-1--apache-2-first-steps)
       - [Extension du TP](#extension-du-tp)
+    - [Réécriture d'URL](#réécriture-durl)
   - [Unix](#unix)
     - [Installation et configuration sécurisée d'un serveur SSH](#installation-et-configuration-sécurisée-dun-serveur-ssh)
     - [Exercices](#exercices)
@@ -30,7 +20,6 @@
 ## Objectifs
 
 Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir administrer un système GNU/Linux pour le web.
->>>>>>> 5c2dd9d97bcbc191b72a1fc3b5ee1ee9c87cd3d7
 
 ## Programme
 
@@ -100,7 +89,6 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
 11. Apache enregistre des *logs* (activité du site et erreurs du serveur). Où les trouvent-on ? Inspecter les avec `cat`. Monitorer les logs en temps réel avec `tail -f /path/vers/fichier_log`.
 
 > N'hésitez pas à [utiliser la documentation très complète](https://httpd.apache.org/docs/current/) (et traduite en français) d'Apache pour vous former, confirmer ou vérifier des informations. La documentation offre des guides, des conseils (sécurité, etc.), des exemples ainsi que la référence de toutes les directives.
-<<<<<<< HEAD
 
 ### Réécriture d'URL
 
@@ -127,8 +115,6 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
  -->
 
 > Utiliser l'excellent site [Regexr](https://regexr.com/) pour tester vos expressions régulières et réviser les éléments de syntaxe des expressions.
-=======
->>>>>>> 5c2dd9d97bcbc191b72a1fc3b5ee1ee9c87cd3d7
 
 ## Unix
 
@@ -188,8 +174,6 @@ git commit -m "message"
 git status
 git log
 ~~~
-<<<<<<< HEAD
-=======
 
 ## Références
 
@@ -201,4 +185,3 @@ git log
 ## Ressources connexes
 
 - [Glossaire](./glossaire.md) : définition des protocoles, modèle OSI, matériel, etc.
->>>>>>> 5c2dd9d97bcbc191b72a1fc3b5ee1ee9c87cd3d7
