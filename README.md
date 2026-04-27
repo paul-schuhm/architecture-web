@@ -100,6 +100,7 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
    1. Client : `/ancien-contact` réécrite en `/ancien-contact.html`
    2. Client : `/a-propos.html` réécrite en `/a-propos.php`
    3. Client : `/article-42` réécrite en `/article.php?id=42`, où `id` est un entier positif
+   4. Client : `/article-42` réécrite en `article.php?id=42` **uniquement** si le fichier `article.php` **existe** sur le serveur
 
 4. À quoi servent les *flags* suivants :
    1. [L]
@@ -109,9 +110,25 @@ Maîtriser les environnements d'hébergements web sous GNU/Linux et savoir admin
    5. [F]
 
 <!-- 
+
+Réponses aux question :
+
 1. RewriteRule ^ancien-contact$ ancien-contact.html [L]
 2. RewriteRule ^a-propos\.html$ a-propos.php [L], si l'utilisateur tape` monsite.com/a-propos.html`, le serveur va chercher silencieusement le fichier `a-propos.php` sans changer l'adresse dans la barre du navigateur.
-3. 
+3. RewriteRule ^article-([0-9]+)$ article.php?id=$1 [L,QSA]
+4. # On vérifie si le fichier article.php existe sur le disque
+    RewriteCond %{DOCUMENT_ROOT}/article.php -f
+    # Si oui, on traite la demande
+    RewriteRule ^article-([0-9]+)$ article.php?id=$1 [L,QSA]
+
+
+Flags :
+
+L : Last. Dernière règle de réécriture appliquée
+R : Redirect (temporaire par défaut, 302) [R=301] pour rediriger de manière permanente
+NC : Ignore la case (case insensitive) pour le pattern matchin
+QSA : QueryStringAppend : Quand l'URI de remplacement contient une chaîne de requête, le comportement par défaut de la règle RewriteRule est de supprimer la query string (il s'agit des paramètres éventuellement passés dans l'URL après le caractère ?, usuellement pour les formulaires traités par la méthode HTTP GET) existante, et de la remplacer par celle nouvellement créée. Avec le drapeau [QSA], les chaînes de requête peuvent être combinées. Garder ancienne query string + ajouter la votre
+F : Forbidden. envoyer par le serveur au client un code de statut "403 Forbidden". Le même effet peut être obtenu à l'aide de la directive Deny, mais ce drapeau offre plus de souplesse dans l'attribution d'un statut Forbidden. Ex: RewriteRule "\.exe"   "-" [F]
  -->
 
 > Utiliser l'excellent site [Regexr](https://regexr.com/) pour tester vos expressions régulières et réviser les éléments de syntaxe des expressions.
